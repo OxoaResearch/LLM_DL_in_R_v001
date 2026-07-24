@@ -1,9 +1,11 @@
 import pandas as pd
 import numpy as np
 import pprint
+
 pp = pprint.PrettyPrinter(indent=4, compact = True)
 
-DATA_PATH = "d:/oxoa/DataLinter/LLM_Experiments/llm_dl_pipeline/datasets/concrete_compressive_strength_prediction/concrete_data.csv"
+DATA_PATH = r"D:\oxoa\DataLinter\LLM_Experiments\llm_dl_pipeline\datasets\01_obfuscated\data.csv"
+TARGET_COLUMN = "y"
 
 def p1(data_path):
     df = pd.read_csv(data_path)
@@ -42,7 +44,6 @@ def p1(data_path):
 
 
 def p2(p2_input):
-    target = "concrete_compressive_strength"
 
     cprops, shape = p2_input
     total_rows, total_columns = shape
@@ -62,8 +63,9 @@ def p2(p2_input):
     
     return f"""You are a data scientist trying to create a regression experiement in R. Considering a dataset located at {DATA_PATH} with the following properties:
     {dataset_properties_string}
-    create a regression experiment in which the variable '{target}' can be predicted from the other variables.
-    Use the most appropriate regression algorithm.
+    write a regression experiment using minimal code in which the variable '{TARGET_COLUMN}' can be predicted from the other variables.
+    You can use only the "lm", "glm", "glmmTMB" libraries.
+    Use the most appropriate regression algorithm of the 3 above.
     """
     
 
