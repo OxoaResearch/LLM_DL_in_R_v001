@@ -1,8 +1,5 @@
 import pandas as pd
 import numpy as np
-import pprint
-
-#pp = pprint.PrettyPrinter(indent=4, compact = True)
 
 def extract_dataset_properties(data_path):
     df = pd.read_csv(data_path)
@@ -87,6 +84,5 @@ def make_llm_initial_prompt(cprops, shape, target_coumn, data_path):
 # CALL DATALINTER with the generated code
 
 def generate_prompt(data_path, target_column):
-    #pp.pprint(make_llm_initial_prompt(extract_dataset_properties(DATA_PATH)))
     cprops, shape, _ = extract_dataset_properties(data_path)
     print(make_llm_initial_prompt(cprops, shape, target_column, data_path))
