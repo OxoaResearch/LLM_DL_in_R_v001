@@ -3,7 +3,7 @@ import llm_prompts
 
 pp = pprint.PrettyPrinter(indent=4, compact = True)
 
-DATA_PATH = r"d:\oxoa\DataLinter\LLM_DataLinter_pipeline\datasets\07_obfuscated\data.csv"
+DATA_PATH = "./datasets/07_obfuscated/data.csv"
 TARGET_COLUMN="x81"
 
 

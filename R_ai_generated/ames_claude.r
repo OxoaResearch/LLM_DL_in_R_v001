@@ -1,5 +1,6 @@
 # Load data
-df <- read.csv("d:/oxoa/DataLinter/LLM_DataLinter_pipeline/datasets/07_obfuscated/data.csv",
+df <- read.csv("../datasets/07_obfuscated/data.csv"
+,
     stringsAsFactors = FALSE
 )
 
